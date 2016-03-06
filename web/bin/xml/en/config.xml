@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<dados>
+	<nome>Christiano</nome>
+	<competencias>
+		<ler>sim</ler>
+		<escrever>sim</escrever>
+		<ouvir>não</ouvir>
+		<falar>não</falar>
+	</competencias>
+	<fluencia>3</fluencia>
+	<areas>
+		<informatica>sim</informatica>
+		<agronegocios>sim</agronegocios>
+		<eletrica>não</eletrica>
+	</areas>
+	...
+	<data>04/03/2016</data>
+</dados>
