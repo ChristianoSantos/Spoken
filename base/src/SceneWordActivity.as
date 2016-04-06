@@ -9,7 +9,7 @@ package
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class WordActivityScene extends MovieClip {
+	public class SceneWordActivity extends MovieClip {
 		public var amount		:int;
 		public var current		:int;
 		
@@ -20,7 +20,7 @@ package
 		public var btnAnswers	:Array;
 		
 		
-		public function WordActivityScene() {
+		public function SceneWordActivity() {
 			
 			var collection:Array = Database.base["Geral"].colecoes["Cores"];
 			
@@ -55,11 +55,11 @@ package
 			addChild( txtMeans );
 			
 			btnAnswers = new Array();
-			var btnAnswer:AnswerButton;
+			var btnAnswer:ButtonAnswer;
 											
 			
 			for (var i:int = 0; i < 4; i++) {
-				btnAnswer = new AnswerButton( collection["azul"].pt );
+				btnAnswer = new ButtonAnswer( collection["azul"].pt );
 				btnAnswer.x = 30 + (i % 2)*100;
 				btnAnswer.y = 200 + int(i / 2) * 100;
 				//btnSelect.addEventListener(MouseEvent.CLICK, gotoWordActivity, false, 0, true);

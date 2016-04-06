@@ -11,7 +11,7 @@ package {
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class DashboardScene extends MovieClip {
+	public class SceneDashboard extends MovieClip {
 		public var bgMenuButtons	:Loader;
 		public var title			:Loader;
 		
@@ -22,7 +22,7 @@ package {
 		public var btnSetting		:SimpleButton;
 		public var btnCredit		:SimpleButton;
 		
-		public function DashboardScene() {
+		public function SceneDashboard() {
 			
 			bgMenuButtons = new Loader();
             bgMenuButtons.load(new URLRequest("gfx/bgMenuButtons.png"));
@@ -105,7 +105,7 @@ package {
 			btnSetting = new SimpleButton( upState, upState, downState, upState );
 			btnSetting.x = 122;
 			btnSetting.y = 372;
-			btnSetting.addEventListener(MouseEvent.CLICK, gotoSetting);
+			btnSetting.addEventListener(MouseEvent.CLICK, gotoActivity); //FIX gotoSetting
 			addChild( btnSetting );
 			
 			upState = new Loader();
@@ -127,30 +127,35 @@ package {
 		
 		public function gotoGlossary(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).glossaryScene.visible = true;
+			Main(parent).sceneGlossary.visible = true;
 		}
 		
 		public function gotoSetting(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).settingScene.visible = true;
+			Main(parent).sceneSetting.visible = true;
+		}
+		
+		public function gotoActivity(evt:MouseEvent):void {
+			this.visible = false;
+			Main(parent).sceneActivity.visible = true;
 		}
 		
 		public function gotoCredit(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).creditScene.visible = true;
+			Main(parent).sceneCredit.visible = true;
 		}
 		
 		public function gotoWord(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).wordScene.visible = true;
+			Main(parent).sceneWord.visible = true;
 		}
 		public function gotoText(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).textScene.visible = true;
+			Main(parent).sceneText.visible = true;
 		}	
 		public function gotoPhrase(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).phraseScene.visible = true;
+			Main(parent).scenePhrase.visible = true;
 		}	
 	}
 }

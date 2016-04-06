@@ -11,14 +11,14 @@ package
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class AnswerButton extends MovieClip {
+	public class ButtonAnswer extends MovieClip {
 		public var bgUp			:Loader;
 		public var bgWrong		:Loader;
 		public var bgRight		:Loader;
 		
 		public var txtLabel		:TextField;
 		
-		public function AnswerButton( label:String ) {
+		public function ButtonAnswer( label:String ) {
 			
 			bgUp = new Loader();
             bgUp.load(new URLRequest("gfx/btnAnswerUp.png"));

@@ -15,14 +15,25 @@ package {
 		
 		public var txtProgress			:TextField;
 		
-		public var dashboardScene		:DashboardScene;
-		public var settingScene			:SettingScene;
-		public var creditScene			:CreditScene;
-		public var wordScene 			:WordScene;
-		public var wordActivityScene 	:WordActivityScene;
-		public var textScene            :TextScene;
-		public var phraseScene     		:PhraseScene;
-		public var glossaryScene    	:GlossaryScene;
+		public var sceneDashboard		:SceneDashboard;
+		public var sceneSetting			:SceneSetting;
+		public var sceneCredit			:SceneCredit;
+		public var sceneWord 			:SceneWord;
+		public var sceneWordActivity 	:SceneWordActivity;
+		public var sceneText            :SceneText;
+		public var scenePhrase     		:ScenePhrase;
+		public var sceneGlossary    	:SceneGlossary;
+		public var sceneActivity    	:SceneActivity;
+		public var sceneLesson	    	:SceneLesson;
+		public var sceneReading	    	:SceneReading;
+		public var sceneWriting	    	:SceneWriting;
+		public var sceneListening    	:SceneListening;
+		public var sceneSpeaking    	:SceneSpeaking;
+		public var sceneCommunity    	:SceneCommunity;
+		public var sceneLibrary	    	:SceneLibrary;
+		public var sceneGame	    	:SceneGame;
+		public var sceneExercise    	:SceneExercise;
+		
 		
 		public function Main():void {
 			if (stage) init();
@@ -49,37 +60,78 @@ package {
 			loaderInfo.addEventListener(ProgressEvent.PROGRESS, onProgress, false, 0, true);
 			loaderInfo.addEventListener(Event.COMPLETE, onComplete, false, 0, true);
 			
-			dashboardScene = new DashboardScene();
-			dashboardScene.visible = false;
-			addChild( dashboardScene );
+			sceneDashboard = new SceneDashboard();
+			sceneDashboard.visible = false;
+			addChild( sceneDashboard );
 			
-			settingScene = new SettingScene();
-			settingScene.visible = false;
-			addChild( settingScene );
+			sceneSetting = new SceneSetting();
+			sceneSetting.visible = false;
+			addChild( sceneSetting );
 			
-			creditScene = new CreditScene();
-			creditScene.visible = false;
-			addChild( creditScene );
+			sceneCredit = new SceneCredit();
+			sceneCredit.visible = false;
+			addChild( sceneCredit );
 			
-			wordScene = new WordScene();
-			wordScene.visible = false;
-			addChild(wordScene);
+			sceneWord = new SceneWord();
+			sceneWord.visible = false;
+			addChild(sceneWord);
 			
-			wordActivityScene = new WordActivityScene();
-			wordActivityScene.visible = false;
-			addChild(wordActivityScene);
+			sceneWordActivity = new SceneWordActivity();
+			sceneWordActivity.visible = false;
+			addChild(sceneWordActivity);
 			
-			textScene = new TextScene();
-			textScene.visible = false;
-			addChild( textScene );
+			sceneText = new SceneText();
+			sceneText.visible = false;
+			addChild( sceneText );
 			
-			phraseScene = new PhraseScene();
-			phraseScene.visible = false;
-			addChild( phraseScene );
+			scenePhrase = new ScenePhrase();
+			scenePhrase.visible = false;
+			addChild( scenePhrase );
 			
-			glossaryScene = new GlossaryScene();
-			glossaryScene.visible = false;
-			addChild( glossaryScene );
+			sceneGlossary = new SceneGlossary();
+			sceneGlossary.visible = false;
+			addChild( sceneGlossary );
+
+			sceneActivity = new SceneActivity();
+			sceneActivity.visible = false;
+			addChild( sceneActivity );
+			
+			sceneLesson = new SceneLesson();
+			sceneLesson.visible = false;
+			addChild( sceneLesson );
+			
+			sceneReading = new SceneReading();
+			sceneReading.visible = false;
+			addChild( sceneReading );
+			
+			sceneWriting = new SceneWriting();
+			sceneWriting.visible = false;
+			addChild( sceneWriting );
+			
+			sceneListening = new SceneListening();
+			sceneListening.visible = false;
+			addChild( sceneListening );
+			
+			sceneSpeaking = new SceneSpeaking();
+			sceneSpeaking.visible = false;
+			addChild( sceneSpeaking );
+			
+			sceneCommunity = new SceneCommunity();
+			sceneCommunity.visible = false;
+			addChild( sceneCommunity );
+			
+			sceneLibrary = new SceneLibrary();
+			sceneLibrary.visible = false;
+			addChild( sceneLibrary );
+			
+			sceneGame = new SceneGame();
+			sceneGame.visible = false;
+			addChild( sceneGame );
+			
+			sceneExercise = new SceneExercise();
+			sceneExercise.visible = false;
+			addChild( sceneExercise );
+			
 		}
 		
 		public function onProgress(evt:ProgressEvent):void {
@@ -88,7 +140,7 @@ package {
 		
 		public function onComplete(evt:Event):void {
 			txtProgress.visible = false;
-			dashboardScene.visible = true;
+			sceneDashboard.visible = true;
 		}
 		
 	}

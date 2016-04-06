@@ -10,7 +10,7 @@ package
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
 	
-		public class WordScene extends MovieClip{
+		public class SceneWord extends MovieClip{
 		public var background: 		Loader;
 		public var btnBack: 		SimpleButton;
 		public var txtTitle: 		TextField;
@@ -22,7 +22,7 @@ package
 		/*public var btnPlus: 		SimpleButton;
 		public var btnMinus: 		SimpleButton;*/
 		
-		public function WordScene() {
+		public function SceneWord() {
 			background = new Loader();
 			background.load(new URLRequest("gfx/background.png"));
 			addChild(background);
@@ -99,14 +99,14 @@ package
 			addChild( txtChooseAmount );
 			
 			btnOptions = new Array();
-			var btnSelect:SelectButton;
+			var btnSelect:ButtonSelect;
 			var options:Array = new Array(	{ value:10, label:"Fácil" },
 											{ value:25, label:"Médio" },
 											{ value:50, label:"Difícil" },
 											{value:100, label:"Épico" }	);
 											
 			for (var i:int = 0; i < 4; i++) {
-				btnSelect = new SelectButton(options[i].value, options[i].label);
+				btnSelect = new ButtonSelect(options[i].value, options[i].label);
 				btnSelect.x = 30 + (i % 2)*100;
 				btnSelect.y = 200 + int(i / 2) * 100;
 				btnSelect.addEventListener(MouseEvent.CLICK, gotoWordActivity, false, 0, true);
@@ -119,12 +119,12 @@ package
 		
 		public function gotoDashboard(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).dashboardScene.visible = true;
+			Main(parent).sceneDashboard.visible = true;
 		}
 		
 		public function gotoWordActivity(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).wordActivityScene.show( SelectButton(evt.currentTarget).value );
+			Main(parent).sceneWordActivity.show( ButtonSelect(evt.currentTarget).value );
 		}
 
 		/*public function plusSize(evt:MouseEvent):void {

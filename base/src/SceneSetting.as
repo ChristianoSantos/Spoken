@@ -1,20 +1,23 @@
 package  
 {
-	import flash.display.MovieClip;
 	import flash.display.Loader;
+	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
-	import flash.text.TextField;
 	import flash.events.MouseEvent;
 	import flash.net.URLRequest;
+	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-	
-		public class CreditScene extends MovieClip {
+	/**
+	 * ...
+	 * @author Grupo Spoken - IFS
+	 */
+	public class SceneSetting extends MovieClip {
 		public var background		:Loader;
 		public var btnBack			:SimpleButton;
 		public var txtTitle			:TextField;
 		
-		public function CreditScene() {
+		public function SceneSetting() {
 			background = new Loader();
 			background.load(new URLRequest("gfx/bgbar.jpg"));
 			addChild( background );
@@ -28,25 +31,24 @@ package
 			addChild( btnBack );
 			
 			txtTitle = new TextField();
-			txtTitle.text = "Créditos";
+			txtTitle.text = "Settings";
 			txtTitle.x = 37;
 			txtTitle.y = 4;
-			txtTitle.setTextFormat( new TextFormat ( "Arial", 25, 0x0000FF, true));
 			addChild( txtTitle );
 			
-			txtTitle.setTextFormat(new TextFormat("Century Gothic", 20, 0x00ff00, true));
+			txtTitle.setTextFormat( new TextFormat("Century Gothic", 20, 0x00ff00, false));
 			
 			
 			super();
 		}
-	
+		
 		public function gotoDashboard(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).dashboardScene.visible = true;
+			Main(parent).sceneDashboard.visible = true;
 		}
-	
 		
-	}	
 		
+		
+	}
 
 }

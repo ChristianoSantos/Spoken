@@ -10,14 +10,14 @@ package
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class SelectButton extends MovieClip {
+	public class ButtonSelect extends MovieClip {
 		public var background	:Loader;
 		public var txtValue		:TextField;
 		public var txtLabel		:TextField;
 		public var value		:int;
 		
 		
-		public function SelectButton(value:int, label:String) {
+		public function ButtonSelect(value:int, label:String) {
 			
 			background = new Loader();
             background.load(new URLRequest("gfx/btnSelect.png"));

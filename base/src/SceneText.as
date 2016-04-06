@@ -8,13 +8,13 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-	public class TextScene extends MovieClip {
+	public class SceneText extends MovieClip {
 		public var background : Loader;
 		public var btnBack : SimpleButton;
 		public var textTitle : TextField;
 		
 		
-		public function TextScene() {
+		public function SceneText() {
 			background = new Loader ();
 			background.load(new URLRequest("gfx/text4.jpeg"));
 			addChild(background);
@@ -40,7 +40,7 @@ package
 		
 		public function gotoDashboard(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).dashboardScene.visible = true;
+			Main(parent).sceneDashboard.visible = true;
 		
 	}
 

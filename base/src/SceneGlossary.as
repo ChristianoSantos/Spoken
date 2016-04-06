@@ -8,14 +8,14 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-		public class GlossaryScene extends MovieClip{
+		public class SceneGlossary extends MovieClip{
 		public var background : Loader;
 		public var btnBack : SimpleButton;
 		public var txtTitle : TextField;
 		
 		public var areas	: Array = new Array;
 		
-		public function GlossaryScene() {
+		public function SceneGlossary() {
 			//background = new Loader();
 			//background.load(new URLRequest("gfx/Text3.jpg"));
 			//addChild(background);
@@ -71,7 +71,7 @@ package
 		
 		public function gotoDashboard(evt:MouseEvent):void {
 			this.visible = false;
-			Main(parent).dashboardScene.visible = true;
+			Main(parent).sceneDashboard.visible = true;
 		}
 	}
 
