@@ -1,17 +1,14 @@
-package 
-{
-	import flash.display.Sprite;
+package {
 	
 	/**
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class Main extends Sprite 
-	{
+	public class Main extends MainBase {
+
 		
-		public function Main():void 
-		{
-			
+		public function Main():void {
+			super();
 		}
 		
 	}

@@ -1,16 +1,27 @@
 :user_configuration
 
 :: About AIR application packaging
-:: http://livedocs.adobe.com/flex/3/html/help.html?content=CommandLineTools_5.html#1035959
-:: http://livedocs.adobe.com/flex/3/html/distributing_apps_4.html#1037515
+:: http://help.adobe.com/en_US/air/build/WS5b3ccc516d4fbf351e63e3d118666ade46-7fd9.html
 
 :: NOTICE: all paths are relative to project root
 
-:: Your certificate information
-set CERT_NAME="Spoken"
-set CERT_PASS=fd
-set CERT_FILE="bat\Spoken.p12"
-set SIGNING_OPTIONS=-storetype pkcs12 -keystore %CERT_FILE% -storepass %CERT_PASS%
+:: Android packaging
+set AND_CERT_NAME="Spoken"
+set AND_CERT_PASS=Rio2016
+set AND_CERT_FILE=cert\Spoken.p12
+set AND_ICONS=icons/android
+
+set AND_SIGNING_OPTIONS=-storetype pkcs12 -keystore "%AND_CERT_FILE%" -storepass %AND_CERT_PASS%
+
+:: iOS packaging
+set IOS_DIST_CERT_FILE=
+set IOS_DEV_CERT_FILE=
+set IOS_DEV_CERT_PASS=
+set IOS_PROVISION=cert\Spoken.mobileprovision
+set IOS_ICONS=icons/ios
+
+set IOS_DEV_SIGNING_OPTIONS=-storetype pkcs12 -keystore "%IOS_DEV_CERT_FILE%" -storepass %IOS_DEV_CERT_PASS% -provisioning-profile %IOS_PROVISION%
+set IOS_DIST_SIGNING_OPTIONS=-storetype pkcs12 -keystore "%IOS_DIST_CERT_FILE%" -provisioning-profile %IOS_PROVISION%
 
 :: Application descriptor
 set APP_XML=application.xml
@@ -20,11 +31,15 @@ set APP_DIR=bin
 set FILE_OR_DIR=-C %APP_DIR% .
 
 :: Your application ID (must match <id> of Application descriptor)
-set APP_ID=Spoken
+set APP_ID=air.Spoken
 
-:: Output
-set AIR_PATH=air
-set AIR_NAME=Spoken
+:: Output packages
+set DIST_PATH=dist
+set DIST_NAME=Spoken
+
+:: Debugging using a custom IP
+set DEBUG_IP=
+
 
 
 :validation
@@ -38,7 +53,5 @@ echo ERROR:
 echo   Application ID in 'bat\SetupApplication.bat' (APP_ID) 
 echo   does NOT match Application descriptor '%APP_XML%' (id)
 echo.
-if %PAUSE_ERRORS%==1 pause
-exit
 
 :end

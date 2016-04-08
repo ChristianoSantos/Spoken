@@ -6,15 +6,15 @@ call bat\SetupApplication.bat
 
 :: Generate
 echo.
-echo Generating a self-signed certificate...
-call adt -certificate -cn %CERT_NAME% 1024-RSA %CERT_FILE% %CERT_PASS%
+echo Generating a self-signed certificate for Android packaging
+call adt -certificate -validityPeriod 25 -cn %AND_CERT_NAME% 1024-RSA "%AND_CERT_FILE%" %AND_CERT_PASS%
 if errorlevel 1 goto failed
 
 :succeed
 echo.
-echo Certificate created: %CERT_FILE% with password "%CERT_PASS%"
+echo Certificate created: %AND_CERT_FILE% with password "%AND_CERT_PASS%"
 echo.
-if "%CERT_PASS%" == "fd" echo (note: you did not change the default password)
+if "%AND_CERT_PASS%" == "fd" echo (note: you did not change the default password)
 echo.
 echo HINTS: 
 echo - you only need to generate this certificate once,

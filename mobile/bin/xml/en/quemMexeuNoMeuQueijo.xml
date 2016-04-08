@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<dados>
+	<texto titulo="Who Moved My Cheese">bla bla bla.</texto>
+	<perguntas>
+		<pergunta1 descricao="bla bla bla" respostas="casa|boneca|roupa|loja"/>
+		<pergunta2 descricao="bla bla bla" respostas="0|1|2|3"/>
+		<pergunta3 descricao="bla bla bla" respostas="0|1|2|3"/>
+		<pergunta4 descricao="bla bla bla" respostas="0|1|2|3"/>
+	</perguntas>
+</dados>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<colecoes>
+	<cores pt="cores" es="colores">
+		<azul pt="azul" es="azul" nivel="1" />
+		<vermelho pt="vermelho" es="rojo" nivel="1" />
+	</cores>
+</colecoes>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<dados>
+	<glossario>
+		<cores pt="cores" en="colors">
+			<azul pt="azul" en="blue" nivel="1" />
+			<vermelho pt="vermelho" en="red" nivel="1" />
+		</cores>
+	</glossario>
+	<textos>
+		<quemMexeuNoMeuQueijo pt="Quem mexeu no meu queijo?" en="Who moved my cheese?" />
+	</textos>
+</dados>
