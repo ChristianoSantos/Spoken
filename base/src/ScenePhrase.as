@@ -11,43 +11,11 @@ package
 	 * ...
 	 * @author ...
 	 */
-	public class ScenePhrase extends MovieClip {
-		
-		public var background: Loader;
-		public var btnBack:    SimpleButton;
-		public var txtTitle: TextField;
+	public class ScenePhrase extends SceneBase {
 		
 		public function ScenePhrase() {
-			background = new Loader;
-			background.load(new URLRequest("gfx/background.png"));
-			addChild(background);
-			
-			background = new Loader();
-			background.load(new URLRequest("gfx/bgbar.jpg"));
-			addChild( background );
-			
-			var upState : Loader = new Loader;
-			upState.load(new URLRequest("gfx/btnBack.png"));
-			btnBack = new SimpleButton( upState, upState, upState, upState );
-			btnBack.x = 0;
-			btnBack.y = 0;
-			btnBack.addEventListener(MouseEvent.CLICK, gotoDashboard);
-			addChild( btnBack );
-			
-			txtTitle = new TextField();
-			txtTitle.text = "Phrases";
-			txtTitle.x = 37;
-			txtTitle.y = 4;
-			addChild( txtTitle );
-			
-			txtTitle.setTextFormat(new TextFormat("Century Gothic", 20, 0x00ff00, false));
-			
 			super();
+			txtTitle.text = "Phrases";
 		}
-		public function gotoDashboard(evt:MouseEvent):void {
-			this.visible = false;
-			Main(parent).sceneDashboard.visible = true;
 	}
-
-}
 }

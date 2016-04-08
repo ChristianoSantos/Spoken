@@ -16,7 +16,7 @@ package {
 	 * @author Grupo Spoken - IFS
 	 */
 	public class MainBase extends Sprite {
-		public var background			:Loader;
+		//public var background			:Loader;
 		
 		public var txtProgress			:TextField;
 		
@@ -51,9 +51,9 @@ package {
 			
 			Database.load();
 			
-			background = new Loader();
-            background.load(new URLRequest("gfx/background.png"));
-			addChild( background );
+			//background = new Loader();
+            //background.load(new URLRequest("gfx/background.png"));
+			//addChild( background );
 
 			txtProgress = new TextField();
 			txtProgress.text = "Carregando... 0%";

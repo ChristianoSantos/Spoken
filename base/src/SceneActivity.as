@@ -14,33 +14,11 @@ package
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class SceneActivity extends MovieClip 
-	{
-		
-		public var background		:Loader;
-		public var btnBack			:SimpleButton;
-		public var txtTitle			:TextField;
+	public class SceneActivity extends SceneBase {
 		
 		public function SceneActivity() {
-			background = new Loader();
-			background.load(new URLRequest("gfx/bgbar.jpg"));
-			addChild( background );
-			
-			var upState : Loader = new Loader();
-            upState.load(new URLRequest("gfx/btnBack.png"));
-			btnBack = new SimpleButton( upState, upState, upState, upState );
-			btnBack.x = 0;
-			btnBack.y = 0;
-			btnBack.addEventListener(MouseEvent.CLICK, gotoDashboard);
-			addChild( btnBack );
-			
-			txtTitle = new TextField();
+			super();
 			txtTitle.text = "Activities";
-			txtTitle.x = 37;
-			txtTitle.y = 4;
-			addChild( txtTitle );
-			
-			txtTitle.setTextFormat( new TextFormat("Century Gothic", 20, 0x00ff00, false));
 			
 			var btnActivity:ButtonAnswer = new ButtonAnswer( "Lições" );
 			btnActivity.x = 15;
@@ -95,13 +73,6 @@ package
 			btnActivity.y = 375;
 			btnActivity.addEventListener(MouseEvent.CLICK, gotoExercise, false, 0, true);
 			addChild( btnActivity );
-			
-			super();
-		}
-		
-		public function gotoDashboard(evt:MouseEvent):void {
-			this.visible = false;
-			Main(parent).sceneDashboard.visible = true;
 		}
 		
 		public function gotoLesson(evt:MouseEvent):void {
