@@ -19,7 +19,7 @@ package
 		
 		public function SceneReading() {
 			background = new Loader();
-			background.load(new URLRequest(""));
+			background.load(new URLRequest("gfx/bgbar.jpg"));
 			addChild( background );
 			
 			var upState : Loader = new Loader();
@@ -27,7 +27,7 @@ package
 			btnBack = new SimpleButton( upState, upState, upState, upState );
 			btnBack.x = 0;
 			btnBack.y = 0;
-			btnBack.addEventListener(MouseEvent.CLICK, gotoDashboard);
+			btnBack.addEventListener(MouseEvent.CLICK, gotoActivity);
 			addChild( btnBack );
 			
 			txtTitle = new TextField();
@@ -41,9 +41,9 @@ package
 			super();
 			
 		}
-		public function gotoDashboard(evt:MouseEvent):void {
+		public function gotoActivity(evt:MouseEvent):void {
 				this.visible = false;
-				Main(parent).sceneDashboard.visible = true;
+				Main(parent).sceneActivity.visible = true;
 		}
 	}
 }
