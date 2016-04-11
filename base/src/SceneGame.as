@@ -1,18 +1,13 @@
-package  
-{
-	import flash.display.MovieClip;
+package {
 	
 	/**
 	 * ...
 	 * @author Grupo Spoken - IFS (Thiago)
 	 */
-	public class SceneGame extends MovieClip 
-	{
+	public class SceneGame extends SceneBase {
 		
-		public function SceneGame() 
-		{
-			super();
-			
+		public function SceneGame() {
+			super( "Jogos" );
 		}
 		
 	}

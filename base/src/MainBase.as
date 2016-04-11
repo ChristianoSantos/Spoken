@@ -3,11 +3,9 @@ package {
 	import flash.display.DisplayObjectContainer;
 	import flash.display.SimpleButton;
 	import flash.display.Sprite;
-	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.events.ProgressEvent;
-	import flash.net.URLRequest;
 	import flash.text.TextField;
 	
 	
@@ -16,8 +14,6 @@ package {
 	 * @author Grupo Spoken - IFS
 	 */
 	public class MainBase extends Sprite {
-		public var background			:Loader;
-		
 		public var txtProgress			:TextField;
 		
 		public var sceneDashboard		:SceneDashboard;
@@ -51,10 +47,6 @@ package {
 			
 			Database.load();
 			
-			background = new Loader();
-            background.load(new URLRequest("gfx/background.png"));
-			addChild( background );
-
 			txtProgress = new TextField();
 			txtProgress.text = "Carregando... 0%";
 			txtProgress.x = 50;

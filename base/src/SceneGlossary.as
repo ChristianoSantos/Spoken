@@ -1,39 +1,16 @@
-package  
-{
-	import flash.display.Loader;
+package {
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
 	import flash.events.MouseEvent;
-	import flash.net.URLRequest;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-		public class SceneGlossary extends MovieClip{
-		public var background : Loader;
-		public var btnBack : SimpleButton;
-		public var txtTitle : TextField;
+	public class SceneGlossary extends SceneBase {
 		
 		public var areas	: Array = new Array;
 		
 		public function SceneGlossary() {
-			//background = new Loader();
-			//background.load(new URLRequest("gfx/Text3.jpg"));
-			//addChild(background);
-			
-			var upState : Loader = new Loader;
-			upState.load(new URLRequest("gfx/btnBack.png"));
-			btnBack = new SimpleButton( upState, upState, upState, upState );
-			btnBack.x = 0;
-			btnBack.y = 0;
-			btnBack.addEventListener(MouseEvent.CLICK, gotoDashboard);
-			addChild( btnBack );
-			
-			txtTitle = new TextField();
-			txtTitle.text = "Glossary";
-			txtTitle.x = 20;
-			txtTitle.y = 20;
-			txtTitle.setTextFormat( new TextFormat("Arial", 25, 0x0000FF, true) );
-			addChild( txtTitle );
+			super( "Glossário" );
 			
 			var i:int = 0;
 			var txtField:TextField;
@@ -59,9 +36,6 @@ package
 				}
 			}
 			
-			
-			super();
-			
 		}
 		
 		public function gotoCollection(evt:MouseEvent):void {
@@ -69,10 +43,6 @@ package
 			txtTitle.text = areas[t.text];
 		}
 		
-		public function gotoDashboard(evt:MouseEvent):void {
-			this.visible = false;
-			Main(parent).sceneDashboard.visible = true;
-		}
 	}
 
 }

@@ -1,7 +1,5 @@
-package  
-{
+package {
 	import adobe.utils.CustomActions;
-	import flash.display.Loader;
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
 	import flash.events.MouseEvent;
@@ -10,61 +8,15 @@ package
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
 	
-		public class SceneWord extends MovieClip{
-		public var background: 		Loader;
-		public var btnBack: 		SimpleButton;
-		public var txtTitle: 		TextField;
+	public class SceneWord extends SceneBase {
 		public var txtDescription:	TextField;
 		public var txtWordsTrained:	TextField;
 		public var txtPerformance:	TextField;
 		public var txtChooseAmount:	TextField;
 		public var btnOptions:		Array;
-		/*public var btnPlus: 		SimpleButton;
-		public var btnMinus: 		SimpleButton;*/
 		
 		public function SceneWord() {
-			background = new Loader();
-			background.load(new URLRequest("gfx/background.png"));
-			addChild(background);
-			
-			background = new Loader();
-			background.load(new URLRequest("gfx/bgbar.jpg"));
-			addChild( background );
-			
-			var upState : Loader = new Loader;
-			upState.load(new URLRequest("gfx/btnBack.png"));
-			btnBack = new SimpleButton( upState, upState, upState, upState );
-			btnBack.x = 0;
-			btnBack.y = 0;
-			btnBack.addEventListener(MouseEvent.CLICK, gotoDashboard);
-			addChild( btnBack );
-			
-			/*upState = new Loader;
-			upState.load(new URLRequest("gfx/btnPlus.png"));
-			btnPlus = new SimpleButton( upState, upState, upState, upState );
-			btnPlus.x = 288;
-			btnPlus.y = 0;
-			btnPlus.addEventListener(MouseEvent.CLICK, plusSize);
-			addChild(btnPlus);
-			
-			upState = new Loader;
-			upState.load(new URLRequest("gfx/btnMinus.png"));
-			btnMinus = new SimpleButton(upState, upState, upState, upState);
-			btnMinus.x = 240;
-			btnMinus.y = 0
-			btnMinus.addEventListener(MouseEvent.CLICK, minusSize);
-			addChild(btnMinus);*/
-			
-			txtTitle = new TextField();
-			txtTitle.text = "Words";
-			txtTitle.x = 0;
-			txtTitle.y = 0;
-			txtTitle.width = 320;
-			txtTitle.selectable = false;
-			addChild( txtTitle );
-			
-			var tFormat : TextFormat = new TextFormat("Century Gothic", 25, 0x00ff00, true, false, false, null, null, TextFormatAlign.CENTER);   //Text Format = Configuração de textos!
-			txtTitle.setTextFormat(tFormat);
+			super( "Palavras" );
 			
 			txtDescription = new TextField();
 			txtDescription.text = "Treine tradução de palavras e/ou expressões gerais e das áreas escolhidas.";
@@ -114,12 +66,6 @@ package
 				addChild( btnSelect );
 			}
 			
-			super();
-		}
-		
-		public function gotoDashboard(evt:MouseEvent):void {
-			this.visible = false;
-			Main(parent).sceneDashboard.visible = true;
 		}
 		
 		public function gotoWordActivity(evt:MouseEvent):void {

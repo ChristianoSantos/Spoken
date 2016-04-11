@@ -1,7 +1,5 @@
-package  
-{
+package {
 	import flash.display.MovieClip;
-	import flash.display.Loader;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	
@@ -12,26 +10,21 @@ package
 	 * @author Grupo Spoken - IFS
 	 */
 	public class ButtonAnswer extends MovieClip {
-		public var bgUp			:Loader;
-		public var bgWrong		:Loader;
-		public var bgRight		:Loader;
+		public var bgUp			:LoaderExt;
+		public var bgWrong		:LoaderExt;
+		public var bgRight		:LoaderExt;
 		
 		public var txtLabel		:TextField;
 		
 		public function ButtonAnswer( label:String ) {
 			
-			bgUp = new Loader();
-            bgUp.load(new URLRequest("gfx/btnAnswerUp.png"));
+			bgUp = new LoaderExt( "gfx/btnAnswerUp.png" );
 			addChild( bgUp );
 			
-			bgWrong = new Loader();
-            bgWrong.load(new URLRequest("gfx/btnAnswerWrong.png"));
-			bgWrong.visible = false;
+			bgWrong = new LoaderExt( "gfx/btnAnswerWrong.png" );
 			addChild( bgWrong );
 			
-			bgRight = new Loader();
-            bgRight.load(new URLRequest("gfx/btnAnswerRight.png"));
-			bgRight.visible = false;
+			bgRight = new LoaderExt( "gfx/btnAnswerRight.png" );
 			addChild( bgRight );
 			
 			txtLabel = new TextField();

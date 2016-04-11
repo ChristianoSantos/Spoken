@@ -1,5 +1,4 @@
-package  
-{
+package {
 	import flash.display.MovieClip;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
@@ -9,11 +8,10 @@ package
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class SceneWordActivity extends MovieClip {
+	public class SceneWordActivity extends SceneBase {
 		public var amount		:int;
 		public var current		:int;
 		
-		public var txtTitle		:TextField;
 		public var txtWord		:TextField;
 		public var txtMeans		:TextField;
 		
@@ -21,19 +19,11 @@ package
 		
 		
 		public function SceneWordActivity() {
+			super( "WordActivity" );
 			
 			var collection:Array = Database.base["Geral"].colecoes["Cores"];
 			
-			txtTitle = new TextField();
-			txtTitle.text = "Words";
-			txtTitle.x = 0;
-			txtTitle.y = 0;
-			txtTitle.width = 320;
-			txtTitle.selectable = false;
-			addChild( txtTitle );
-			
 			var tFormat : TextFormat = new TextFormat("Century Gothic", 25, 0x00ff00, true, false, false, null, null, TextFormatAlign.CENTER);   //Text Format = Configuração de textos!
-			txtTitle.setTextFormat(tFormat);
 			
 			txtWord = new TextField();
 			txtWord.text = collection["azul"].en;
@@ -66,19 +56,11 @@ package
 				btnAnswers.push( btnAnswer );
 				addChild( btnAnswer );
 			}
-			
-			super();
 		}
 		
 		public function show( amount: int ) : void {
 			current = 0;
 			this.amount = amount;
-			
-			
-			
-			
-			
-			
 			visible = true;
 		}
 	}

@@ -1,19 +1,16 @@
 package {
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
-	import flash.display.Loader;
 	import flash.text.TextField;
 	import flash.events.MouseEvent;
-	
-	import flash.net.URLRequest;
 	
 	/**
 	 * ...
 	 * @author Grupo Spoken - IFS
 	 */
-	public class SceneDashboard extends MovieClip {
-		public var bgMenuButtons	:Loader;
-		public var title			:Loader;
+	public class SceneDashboard extends SceneBase {
+		public var bgMenuButtons	:LoaderExt;
+		public var title			:LoaderExt;
 		
 		public var btnGlossary		:SimpleButton;
 		public var btnWords			:SimpleButton;
@@ -23,25 +20,16 @@ package {
 		public var btnCredit		:SimpleButton;
 		
 		public function SceneDashboard() {
+			super();
 			
-			bgMenuButtons = new Loader();
-            bgMenuButtons.load(new URLRequest("gfx/bgMenuButtons.png"));
-			bgMenuButtons.x = 43;
-			bgMenuButtons.y = 320;
+			bgMenuButtons = new LoaderExt( "gfx/bgMenuButtons.png", 43, 320 );
 			this.addChild( bgMenuButtons );
 
-			title = new Loader();
-            title.load(new URLRequest("gfx/title.png"));
-			title.x = 0;
-			title.y = 50;
+			title = new LoaderExt( "gfx/title.png", 0, 50 );
 			this.addChild( title );
 			
-			var upState : Loader = new Loader();
-            upState.load(new URLRequest("gfx/btnGlossary.png"));
-			var downState : Loader = new Loader();
-            downState.load(new URLRequest("gfx/btnGlossary.png"));
-			downState.x += 8;
-			downState.y += 3;
+			var upState : LoaderExt = new LoaderExt( "gfx/btnGlossary.png" );
+			var downState : LoaderExt = new LoaderExt( "gfx/btnGlossary.png", 8, 3 );
 			downState.scaleX = 0.9;
 			downState.scaleY = 0.9;
 			btnGlossary = new SimpleButton( upState, upState, downState, upState );
@@ -50,12 +38,8 @@ package {
 			btnGlossary.addEventListener(MouseEvent.CLICK, gotoGlossary, false, 0, true);
 			this.addChild( btnGlossary );
 			
-			upState = new Loader();
-            upState.load(new URLRequest("gfx/btnWords.png"));
-			downState = new Loader();
-            downState.load(new URLRequest("gfx/btnWords.png"));
-			downState.x += 5;
-			downState.y += 5;
+			upState = new LoaderExt( "gfx/btnWords.png" );
+			downState = new LoaderExt( "gfx/btnWords.png", 5, 5 );
 			downState.scaleX = 0.9;
 			downState.scaleY = 0.9;
 			btnWords = new SimpleButton( upState, upState, downState, upState );
@@ -64,14 +48,8 @@ package {
 			btnWords.addEventListener(MouseEvent.CLICK, gotoWord, false, 0, true);
 			this.addChild( btnWords );
 			
-
-			
-			upState = new Loader();
-            upState.load(new URLRequest("gfx/btnPhrases.png"));
-			downState = new Loader();
-            downState.load(new URLRequest("gfx/btnPhrases.png"));
-			downState.x += 5;
-			downState.y += 5;
+			upState = new LoaderExt( "gfx/btnPhrases.png" );
+			downState = new LoaderExt( "gfx/btnPhrases.png", 5, 5 );
 			downState.scaleX = 0.9;
 			downState.scaleY = 0.9;
 			btnPhrases = new SimpleButton( upState, upState, downState, upState );
@@ -80,12 +58,8 @@ package {
 			btnPhrases.addEventListener(MouseEvent.CLICK, gotoPhrase, false, 0, true);
 			this.addChild( btnPhrases );
 			
-			upState = new Loader();
-            upState.load(new URLRequest("gfx/btnTexts.png"));
-			downState = new Loader();
-            downState.load(new URLRequest("gfx/btnTexts.png"));
-			downState.x += 8;
-			downState.y += 3;
+			upState = new LoaderExt( "gfx/btnTexts.png" );
+			downState = new LoaderExt("gfx/btnTexts.png", 8, 3);
 			downState.scaleX = 0.9;
 			downState.scaleY = 0.9;
 			btnTexts = new SimpleButton( upState, upState, downState, upState );
@@ -94,12 +68,8 @@ package {
 			btnTexts.addEventListener(MouseEvent.CLICK, gotoText, false, 0, true);
 			this.addChild( btnTexts );
 			
-			upState = new Loader();
-            upState.load(new URLRequest("gfx/btnSettings.png"));
-			downState = new Loader();
-            downState.load(new URLRequest("gfx/btnSettings.png"));
-			downState.x += 5;
-			downState.y += 3;
+			upState = new LoaderExt( "gfx/btnSettings.png" );
+			downState = new LoaderExt( "gfx/btnSettings.png", 5, 3 );
 			downState.scaleX = 0.9;
 			downState.scaleY = 0.9;
 			btnSetting = new SimpleButton( upState, upState, downState, upState );
@@ -108,12 +78,8 @@ package {
 			btnSetting.addEventListener(MouseEvent.CLICK, gotoActivity); //FIX gotoSetting
 			addChild( btnSetting );
 			
-			upState = new Loader();
-            upState.load(new URLRequest("gfx/btnCredit.jpg"));
-			downState = new Loader();
-            downState.load(new URLRequest("gfx/btnCredit.jpg"));
-			downState.x += 5;
-			downState.y += 3;
+			upState = new LoaderExt( "gfx/btnCredit.jpg" );
+			downState = new LoaderExt( "gfx/btnCredit.jpg", 5, 3 );
 			downState.scaleX = 0.9;
 			downState.scaleY = 0.9;
 			btnCredit = new SimpleButton( upState, upState, downState, upState );
@@ -121,8 +87,6 @@ package {
 			btnCredit.y = 0;
 			btnCredit.addEventListener(MouseEvent.CLICK, gotoCredit);
 			addChild( btnCredit );
-			
-			
 		}
 		
 		public function gotoGlossary(evt:MouseEvent):void {
